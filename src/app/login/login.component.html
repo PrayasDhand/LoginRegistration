@@ -1,0 +1,32 @@
+<form  class="border p-3 rounded-3 border-dark" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+    <div class="row g-o">
+        <div class="col text-center p-2 mb-3 bg-dark">
+            <span class="fs-3" style="color: white;">Login</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+            <div class="form-text text-danger" *ngIf="Email.errors?.['required']">Email id is required</div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+            <div class="form-text text-danger" *ngIf="Password.errors?.['required']">Password is required</div>
+        </div>
+        
+    </div>
+   
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+        
+    </div>
+</form>
